@@ -1,0 +1,52 @@
+{
+  "nhanKhau": [
+    {
+      "id": "1",
+      "maHo": "H001",
+      "hoTen": "Nguyễn Văn A",
+      "cccd": "092092123456",
+      "gioiTinh": "Nam",
+      "dien": "Gia đình văn hóa"
+    },
+    {
+      "id": "2",
+      "maHo": "H001",
+      "hoTen": "Trần Thị B",
+      "cccd": "092092654321",
+      "gioiTinh": "Nữ",
+      "dien": "Gia đình văn hóa"
+    },
+    {
+      "id": "3",
+      "maHo": "H002",
+      "hoTen": "Lê Văn C",
+      "cccd": "092092987654",
+      "gioiTinh": "Nam",
+      "dien": "Hộ nghèo"
+    },
+    {
+      "id": "4",
+      "maHo": "H003",
+      "hoTen": "Phạm Thị D",
+      "cccd": "092092112233",
+      "gioiTinh": "Nữ",
+      "dien": "Cận nghèo"
+    },
+    {
+      "id": "5",
+      "maHo": "H004",
+      "hoTen": "Hoàng Văn E",
+      "cccd": "092092445566",
+      "gioiTinh": "Nam",
+      "dien": "Gia đình văn hóa"
+    },
+    {
+      "id": "6",
+      "maHo": "H004",
+      "hoTen": "Đinh Thị F",
+      "cccd": "092092778899",
+      "gioiTinh": "Nữ",
+      "dien": "Gia đình văn hóa"
+    }
+  ]
+}
