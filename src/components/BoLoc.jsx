@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { Select, Modal, Table, Tag } from 'antd';
 
-// Nhận nguyên cái kho 'danhsach' từ HoGiaDinh truyền sang
 const BoLoc = ({ danhsach }) => {
     const [modalLocOpen, setModalLocOpen] = useState(false);
     const [danhSachLoc, setDanhSachLoc] = useState([]);
     const [tieuDeLoc, setTieuDeLoc] = useState('');
 
-    // State này dùng để điều khiển cái chữ hiển thị trên ô Select
+
     const [giaTriChon, setGiaTriChon] = useState(null);
 
     // Hàm tính tuổi
@@ -58,10 +57,10 @@ const BoLoc = ({ danhsach }) => {
     // Hàm đóng Modal và Reset Dropdown
     const dongModalLoc = () => {
         setModalLocOpen(false);
-        setGiaTriChon(null); // Reset ô Select về chữ "-- Chọn diện cần lọc --"
+        setGiaTriChon(null);
     };
 
-    // Cột hiển thị của bảng trong Modal
+ 
     const cotBoLoc = [
         { title: 'Mã Hộ', dataIndex: 'maHo', key: 'maHo', width: 100 },
         { title: 'Họ và Tên', dataIndex: 'hoTen', key: 'hoTen' },
@@ -95,7 +94,7 @@ const BoLoc = ({ danhsach }) => {
             <Modal
                 title={tieuDeLoc}
                 open={modalLocOpen}
-                onCancel={dongModalLoc} // Gọi hàm đóng để vừa tắt vừa reset select
+                onCancel={dongModalLoc}
                 footer={null}
                 width={800}
             >

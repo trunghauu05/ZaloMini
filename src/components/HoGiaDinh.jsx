@@ -73,7 +73,7 @@ const HoGiaDinh = () => {
     });
 
     return (
-        <div style={{ backgroundColor: 'white', borderRadius: '8px', padding: '20px' }}>
+        <div style={{ backgroundColor: 'white', borderRadius: '8px' }}>
             <Title level={2}>Danh sách Hộ Gia Đình & Nhân Khẩu</Title>
             <BoLoc danhsach={danhsach} />
             {loading ? (
@@ -81,7 +81,8 @@ const HoGiaDinh = () => {
                     <Spin size="large"></Spin>
                 </div>
             ) : (
-                <div style={{ marginTop: '20px' }}>
+                <div style={{ marginTop: '20px',overflowX: 'auto' }}>
+                    <div style={{ minWidth: '900px' }}>
                     <Row style={{ fontWeight: 'bold', backgroundColor: 'white', borderBottom: '1px solid rgb(50, 50, 51)', padding: '20px 8px' }}>
                         <Col span={3}>Mã Hộ</Col>
                         <Col span={4}>Họ và Tên Chủ Hộ</Col>
@@ -93,6 +94,7 @@ const HoGiaDinh = () => {
                         <Col span={2}>Chi tiết</Col>
                         <Col span={2}>Hành động</Col>
                     </Row>
+                    
 
                     {danhsachhogiadinh.map((nguoi, index) => {
                         const soNhanKhau = danhsach.filter(item => item.maHo === nguoi.maHo).length;
@@ -125,6 +127,7 @@ const HoGiaDinh = () => {
                             </Row>
                         );
                     })}
+                    </div>
                 </div>
             )}
             <ChitietHoGiaDinh

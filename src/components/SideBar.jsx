@@ -11,7 +11,7 @@ const SideBar = () => {
         { key: '5', icon: <CalendarOutlined></CalendarOutlined>, label: 'Lịch Sinh Hoạt' }
     ]
     return (
-        <Sider width={250}>
+        <Sider width={250} breakpoint="lg" collapsedWidth="0">
             <Menu mode="inline" items={Items} style={{height:'100%'}}>
             </Menu>
         </Sider>

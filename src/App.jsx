@@ -10,7 +10,7 @@ function Zalo() {
             <HeaderZalo></HeaderZalo>
             <Layout>
                 <SideBar></SideBar>
-                <Content style={{padding:'50px', backgroundColor:'white'}}>
+                <Content style={{padding:'20px', backgroundColor:'white',overflowX: 'hidden'}}>
                     <HoGiaDinh></HoGiaDinh>
                 </Content>
             </Layout>
