@@ -13,7 +13,6 @@ const HeaderZalo = () => {
         <Avatar icon={<UserOutlined></UserOutlined>}></Avatar>
         <Button type="primary">Đăng Nhập</Button>
       </Space>
-      
     </Header>
   );
 }

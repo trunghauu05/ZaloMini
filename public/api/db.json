@@ -6,7 +6,11 @@
       "hoTen": "Nguyễn Văn A",
       "cccd": "092092123456",
       "gioiTinh": "Nam",
-      "dien": "Gia đình văn hóa"
+      "dien": "Gia đình văn hóa",
+      "ngaySinh": "15/04/1978",
+      "quanHe": "Chủ hộ",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0901123456"
     },
     {
       "id": "2",
@@ -14,7 +18,23 @@
       "hoTen": "Trần Thị B",
       "cccd": "092092654321",
       "gioiTinh": "Nữ",
-      "dien": "Gia đình văn hóa"
+      "dien": "Gia đình văn hóa",
+      "ngaySinh": "22/08/1982",
+      "quanHe": "Vợ",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0912234567"
+    },
+    {
+      "id": "7",
+      "maHo": "H001",
+      "hoTen": "Nguyễn Văn Nhí",
+      "cccd": "092092333444",
+      "gioiTinh": "Nam",
+      "dien": "Gia đình văn hóa",
+      "ngaySinh": "05/09/2005",
+      "quanHe": "Con",
+      "tinhTrang": "Tạm vắng",
+      "soDienThoai": "0923345678"
     },
     {
       "id": "3",
@@ -22,7 +42,11 @@
       "hoTen": "Lê Văn C",
       "cccd": "092092987654",
       "gioiTinh": "Nam",
-      "dien": "Hộ nghèo"
+      "dien": "Hộ nghèo",
+      "ngaySinh": "10/10/1965",
+      "quanHe": "Chủ hộ",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0934456789"
     },
     {
       "id": "4",
@@ -30,7 +54,11 @@
       "hoTen": "Phạm Thị D",
       "cccd": "092092112233",
       "gioiTinh": "Nữ",
-      "dien": "Cận nghèo"
+      "dien": "Cận nghèo",
+      "ngaySinh": "08/03/1990",
+      "quanHe": "Chủ hộ",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0945567890"
     },
     {
       "id": "5",
@@ -38,7 +66,11 @@
       "hoTen": "Hoàng Văn E",
       "cccd": "092092445566",
       "gioiTinh": "Nam",
-      "dien": "Gia đình văn hóa"
+      "dien": "Gia đình văn hóa",
+      "ngaySinh": "12/12/1985",
+      "quanHe": "Vợ",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0988678901"
     },
     {
       "id": "6",
@@ -46,7 +78,35 @@
       "hoTen": "Đinh Thị F",
       "cccd": "092092778899",
       "gioiTinh": "Nữ",
-      "dien": "Gia đình văn hóa"
+      "dien": "Gia đình văn hóa",
+      "ngaySinh": "20/11/1988",
+      "quanHe": "Vợ",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0977789012"
+    },
+    {
+      "id": "8",
+      "maHo": "H005",
+      "hoTen": "Hoàng Văn E",
+      "cccd": "092092445566",
+      "gioiTinh": "Nam",
+      "dien": "Gia đình văn hóa",
+      "ngaySinh": "12/12/1985",
+      "quanHe": "Chủ hộ",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0988678901"
+    },
+    {
+      "id": "9",
+      "maHo": "H005",
+      "hoTen": "Đinh Thị F",
+      "cccd": "092092778899",
+      "gioiTinh": "Nữ",
+      "dien": "Gia đình văn hóa",
+      "ngaySinh": "20/11/1988",
+      "quanHe": "Chủ hộ",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0977789012"
     }
   ]
 }
