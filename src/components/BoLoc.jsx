@@ -75,12 +75,12 @@ const BoLoc = ({ danhsach }) => {
     ];
 
     return (
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: '20px',display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px'}}>
             <span style={{ fontWeight: 'bold', marginRight: '10px' }}>Trích xuất danh sách:</span>
             <Select
                 value={giaTriChon}
                 placeholder="-- Chọn diện cần lọc --"
-                style={{ width: 300 }}
+                style={{ width: '100%', maxWidth: '300px' }}
                 onChange={handleChonBoLoc}
                 allowClear
             >
@@ -97,6 +97,7 @@ const BoLoc = ({ danhsach }) => {
                 onCancel={dongModalLoc}
                 footer={null}
                 width={800}
+                style={{ top: 20 }}
             >
                 <Table
                     dataSource={danhSachLoc}
@@ -104,6 +105,7 @@ const BoLoc = ({ danhsach }) => {
                     rowKey="id"
                     pagination={{ pageSize: 5 }}
                     style={{ marginTop: '10px' }}
+                    scroll={{ x: 700 }}
                 />
             </Modal>
         </div>

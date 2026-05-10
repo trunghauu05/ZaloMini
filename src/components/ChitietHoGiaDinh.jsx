@@ -35,6 +35,7 @@ const ChitietHoGiaDinh = ({ open, onClose, maHo, thanhVienHo }) => {
                 pagination={false}
                 rowKey="id" // Thêm rowKey để Ant Design không báo lỗi thiếu key
                 style={{ marginTop: '20px' }}
+                scroll={{ x: 800 }}
             />
         </Modal>
     );
