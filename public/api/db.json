@@ -2,7 +2,7 @@
   "nhanKhau": [
     {
       "id": "1",
-      "maHo": "H001",
+      "maHo": "123",
       "hoTen": "Nguyễn Văn A",
       "cccd": "092092123456",
       "gioiTinh": "Nam",
@@ -14,7 +14,7 @@
     },
     {
       "id": "2",
-      "maHo": "H001",
+      "maHo": "A/12",
       "hoTen": "Trần Thị B",
       "cccd": "092092654321",
       "gioiTinh": "Nữ",
