@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Typography, Spin, Row, Col, Space, Button, Tag } from 'antd';
-import BoLoc from './BoLoc';
+import { PlusOutlined } from '@ant-design/icons';
 import ChitietHoGiaDinh from './ChitietHoGiaDinh';
 
 const { Title } = Typography;
@@ -74,68 +74,81 @@ const HoGiaDinh = () => {
 
     return (
         <div style={{ backgroundColor: 'white', borderRadius: '8px' }}>
-            <Title level={2}>Danh sách Hộ Gia Đình & Nhân Khẩu</Title>
-            <BoLoc danhsach={danhsach} />
-            {loading ? (
-                <div style={{ textAlign: 'center', padding: '50px' }}>
-                    <Spin size="large"></Spin>
-                </div>
+            {modalopen ? (
+                <ChitietHoGiaDinh
+                    onBack={dongChiTiet}
+                    maHo={nguoichon?.maHo}
+                    tenAp={nguoichon?.tenAp}
+                    thanhVienHo={thanhVienHo}
+                />
             ) : (
-                <div style={{ marginTop: '20px',overflowX: 'auto' }}>
-                    <div style={{ minWidth: '900px' }}>
-                    <Row style={{ fontWeight: 'bold', backgroundColor: 'white', borderBottom: '1px solid rgb(50, 50, 51)', padding: '20px 8px' }}>
-                        <Col span={3}>Mã Hộ</Col>
-                        <Col span={4}>Họ và Tên Chủ Hộ</Col>
-                        <Col span={3}>CCCD/CMND</Col>
-                        <Col span={2}>Nhân Khẩu</Col>
-                        <Col span={3}>Số Điện Thoại</Col>
-                        <Col span={2}>Giới tính</Col>
-                        <Col span={3}>Diện Chính Sách</Col>
-                        <Col span={2}>Chi tiết</Col>
-                        <Col span={2}>Hành động</Col>
-                    </Row>
-                    
-
-                    {danhsachhogiadinh.map((nguoi, index) => {
-                        const soNhanKhau = danhsach.filter(item => item.maHo === nguoi.maHo).length;
-                        return (
-                            <Row key={nguoi.id || index} style={{ padding: '20px 8px', borderBottom: '1px solid rgb(50, 50, 51)', alignItems: 'center' }} >
-                                <Col span={3}><b>{nguoi.maHo}</b>
-                                    {nguoi.canhBao && (
-                                        <Tag color="error" style={{ marginTop: '4px', fontSize: '10px' }}>
-                                            {nguoi.canhBao}
-                                        </Tag>
-                                    )}
-                                </Col>
-                                <Col span={4}><b>{nguoi.hoTen}</b></Col>
-                                <Col span={3}><b>{nguoi.cccd}</b></Col>
-                                <Col span={2}><b>{soNhanKhau} người</b></Col>
-                                <Col span={3}><b>{nguoi.soDienThoai}</b></Col>
-                                <Col span={2}><b>{nguoi.gioiTinh}</b></Col>
-                                <Col span={3}><b>{nguoi.dien}</b></Col>
-                                <Col span={2}>
-                                    <Space>
-                                        <Button type="primary" onClick={() => xemChiTiet(nguoi)} size="small">Chi tiết</Button>
-                                    </Space>
-                                </Col>
-                                <Col span={2}>
-                                    <Space>
-                                        <Button type="primary" size="small">Sửa</Button>
-                                        <Button danger size="small">Xóa</Button>
-                                    </Space>
-                                </Col>
+                <>
+                    <Title level={2}>Danh sách Hộ Gia Đình & Nhân Khẩu</Title>
+                    {loading ? (
+                        <div style={{ textAlign: 'center', padding: '50px' }}>
+                            <Spin size="large"></Spin>
+                        </div>
+                    ) : (
+                        <div style={{ marginTop: '20px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '12px' }}>
+                                <Button type="primary" icon={<PlusOutlined />} style={{ backgroundColor: '#22c55e', borderColor: '#22c55e' }}>
+                                    Thêm
+                                </Button>
+                            </div>
+                            <div style={{ overflowX: 'auto' }}>
+                            <div style={{ minWidth: '900px' }}>
+                            <Row style={{ fontWeight: 'bold', backgroundColor: 'white', borderBottom: '1px solid rgb(50, 50, 51)', padding: '20px 8px' }}>
+                                <Col span={2}>Mã Hộ</Col>
+                                <Col span={3}>Tên ấp</Col>
+                                <Col span={4}>Họ và Tên Chủ Hộ</Col>
+                                <Col span={3}>CCCD/CMND</Col>
+                                <Col span={2}>Nhân Khẩu</Col>
+                                <Col span={3}>Số Điện Thoại</Col>
+                                <Col span={2}>Giới tính</Col>
+                                <Col span={2}>Diện Chính Sách</Col>
+                                <Col span={1}>Chi tiết</Col>
+                                <Col span={2}>Hành động</Col>
                             </Row>
-                        );
-                    })}
-                    </div>
-                </div>
+                            
+
+                            {danhsachhogiadinh.map((nguoi, index) => {
+                                const soNhanKhau = danhsach.filter(item => item.maHo === nguoi.maHo).length;
+                                return (
+                                    <Row key={nguoi.id || index} style={{ padding: '20px 8px', borderBottom: '1px solid rgb(50, 50, 51)', alignItems: 'center' }} >
+                                        <Col span={2}><b>{nguoi.maHo}</b>
+                                            {nguoi.canhBao && (
+                                                <Tag color="error" style={{ marginTop: '4px', fontSize: '10px' }}>
+                                                    {nguoi.canhBao}
+                                                </Tag>
+                                            )}
+                                        </Col>
+                                        <Col span={3}><b>{nguoi.tenAp || 'Chưa cập nhật'}</b></Col>
+                                        <Col span={4}><b>{nguoi.hoTen}</b></Col>
+                                        <Col span={3}><b>{nguoi.cccd}</b></Col>
+                                        <Col span={2}><b>{soNhanKhau} người</b></Col>
+                                        <Col span={3}><b>{nguoi.soDienThoai}</b></Col>
+                                        <Col span={2}><b>{nguoi.gioiTinh}</b></Col>
+                                        <Col span={2}><b>{nguoi.dien}</b></Col>
+                                        <Col span={1}>
+                                            <Space>
+                                                <Button type="primary" onClick={() => xemChiTiet(nguoi)} size="small">Chi tiết</Button>
+                                            </Space>
+                                        </Col>
+                                        <Col span={2}>
+                                            <Space>
+                                                <Button type="primary" size="small">Sửa</Button>
+                                                <Button danger size="small">Xóa</Button>
+                                            </Space>
+                                        </Col>
+                                    </Row>
+                                );
+                            })}
+                            </div>
+                            </div>
+                        </div>
+                    )}
+                </>
             )}
-            <ChitietHoGiaDinh
-                open={modalopen}
-                onClose={dongChiTiet}
-                maHo={nguoichon?.maHo}
-                thanhVienHo={thanhVienHo}
-            />
         </div>
     );
 }

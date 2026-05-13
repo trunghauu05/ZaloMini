@@ -8,8 +8,6 @@ const BoLoc = ({ danhsach }) => {
 
 
     const [giaTriChon, setGiaTriChon] = useState(null);
-
-    // Hàm tính tuổi
     const tinhTuoi = (ngaySinh) => {
         if (!ngaySinh) return 0;
         const parts = ngaySinh.split('/');
@@ -54,7 +52,6 @@ const BoLoc = ({ danhsach }) => {
         setModalLocOpen(true);
     };
 
-    // Hàm đóng Modal và Reset Dropdown
     const dongModalLoc = () => {
         setModalLocOpen(false);
         setGiaTriChon(null);

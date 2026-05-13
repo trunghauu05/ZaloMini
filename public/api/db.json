@@ -2,7 +2,8 @@
   "nhanKhau": [
     {
       "id": "1",
-      "maHo": "123",
+      "maHo": "H001",
+      "tenAp": "Ấp Thới Hòa",
       "hoTen": "Nguyễn Văn A",
       "cccd": "092092123456",
       "gioiTinh": "Nam",
@@ -14,7 +15,8 @@
     },
     {
       "id": "2",
-      "maHo": "A/12",
+      "maHo": "H001",
+      "tenAp": "Ấp Thới Thuận",
       "hoTen": "Trần Thị B",
       "cccd": "092092654321",
       "gioiTinh": "Nữ",
@@ -27,18 +29,20 @@
     {
       "id": "7",
       "maHo": "H001",
+      "tenAp": "Ấp Thạnh Quới",
       "hoTen": "Nguyễn Văn Nhí",
       "cccd": "092092333444",
       "gioiTinh": "Nam",
       "dien": "Gia đình văn hóa",
       "ngaySinh": "05/09/2005",
       "quanHe": "Con",
-      "tinhTrang": "Tạm vắng",
+      "tinhTrang": "Chuyển đi",
       "soDienThoai": "0923345678"
     },
     {
       "id": "3",
       "maHo": "H002",
+      "tenAp": "Ấp Thạnh Lộc",
       "hoTen": "Lê Văn C",
       "cccd": "092092987654",
       "gioiTinh": "Nam",
@@ -51,6 +55,7 @@
     {
       "id": "4",
       "maHo": "H003",
+      "tenAp": "Ấp Thạnh Trung",
       "hoTen": "Phạm Thị D",
       "cccd": "092092112233",
       "gioiTinh": "Nữ",
@@ -63,18 +68,20 @@
     {
       "id": "5",
       "maHo": "H004",
+      "tenAp": "Ấp Đông Thuận",
       "hoTen": "Hoàng Văn E",
       "cccd": "092092445566",
       "gioiTinh": "Nam",
       "dien": "Gia đình văn hóa",
       "ngaySinh": "12/12/1985",
-      "quanHe": "Vợ",
+      "quanHe": "Chủ hộ",
       "tinhTrang": "Thường trú",
       "soDienThoai": "0988678901"
     },
     {
       "id": "6",
       "maHo": "H004",
+      "tenAp": "Ấp Đông Mỹ",
       "hoTen": "Đinh Thị F",
       "cccd": "092092778899",
       "gioiTinh": "Nữ",
@@ -87,6 +94,7 @@
     {
       "id": "8",
       "maHo": "H005",
+      "tenAp": "Ấp Đông Lợi",
       "hoTen": "Hoàng Văn E",
       "cccd": "092092445566",
       "gioiTinh": "Nam",
@@ -99,6 +107,7 @@
     {
       "id": "9",
       "maHo": "H005",
+      "tenAp": "Ấp Thới Hiệp",
       "hoTen": "Đinh Thị F",
       "cccd": "092092778899",
       "gioiTinh": "Nữ",
@@ -107,6 +116,84 @@
       "quanHe": "Chủ hộ",
       "tinhTrang": "Thường trú",
       "soDienThoai": "0977789012"
+    },
+    {
+      "id": "10",
+      "maHo": "H006",
+      "tenAp": "Ấp Thới Phước",
+      "hoTen": "Ngô Thị G",
+      "cccd": "092092556677",
+      "gioiTinh": "Nữ",
+      "dien": "Cận nghèo",
+      "ngaySinh": "03/01/1975",
+      "quanHe": "Chủ hộ",
+      "tinhTrang": "Chuyển đến",
+      "soDienThoai": "0962233445"
+    },
+    {
+      "id": "11",
+      "maHo": "H006",
+      "tenAp": "Ấp Trung Hòa",
+      "hoTen": "Ngô Minh H",
+      "cccd": "092092888999",
+      "gioiTinh": "Nam",
+      "dien": "Cận nghèo",
+      "ngaySinh": "19/07/1998",
+      "quanHe": "Con",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0903344556"
+    },
+    {
+      "id": "12",
+      "maHo": "H007",
+      "tenAp": "Ấp Trung Thành",
+      "hoTen": "Trần Văn I",
+      "cccd": "092092111222",
+      "gioiTinh": "Nam",
+      "dien": "Hộ nghèo",
+      "ngaySinh": "28/12/1960",
+      "quanHe": "Chủ hộ",
+      "tinhTrang": "Chuyển đi",
+      "soDienThoai": "0935566778"
+    },
+    {
+      "id": "13",
+      "maHo": "H007",
+      "tenAp": "Ấp Thới Hòa",
+      "hoTen": "Phan Thị K",
+      "cccd": "092092333221",
+      "gioiTinh": "Nữ",
+      "dien": "Hộ nghèo",
+      "ngaySinh": "14/05/1962",
+      "quanHe": "Vợ",
+      "tinhTrang": "Chuyển đi",
+      "soDienThoai": "0939988776"
+    },
+    {
+      "id": "14",
+      "maHo": "H008",
+      "tenAp": "Ấp Thới Thuận",
+      "hoTen": "Đặng Minh L",
+      "cccd": "092092444555",
+      "gioiTinh": "Nam",
+      "dien": "Gia đình văn hóa",
+      "ngaySinh": "09/09/1992",
+      "quanHe": "Chủ hộ",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0971122334"
+    },
+    {
+      "id": "15",
+      "maHo": "H008",
+      "tenAp": "Ấp Thạnh Quới",
+      "hoTen": "Lý Thị M",
+      "cccd": "092092666777",
+      "gioiTinh": "Nữ",
+      "dien": "Gia đình văn hóa",
+      "ngaySinh": "16/11/1995",
+      "quanHe": "Vợ",
+      "tinhTrang": "Thường trú",
+      "soDienThoai": "0983344556"
     }
   ]
 }
