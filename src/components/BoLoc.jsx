@@ -101,6 +101,7 @@ const BoLoc = ({ danhsach }) => {
                     columns={cotBoLoc}
                     rowKey="id"
                     pagination={{ pageSize: 5 }}
+                    tableLayout="fixed"
                     style={{ marginTop: '10px' }}
                     scroll={{ x: 700 }}
                 />

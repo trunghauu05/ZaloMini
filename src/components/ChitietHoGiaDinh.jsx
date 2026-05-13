@@ -1,8 +1,13 @@
+import { useMemo, useState } from 'react';
 import { Table, Typography, Button, Space } from 'antd';
+import HeaderSearchIcon from './HeaderSearchIcon';
 
 const { Title, Text } = Typography;
 
-const ChitietHoGiaDinh = ({ onBack, maHo, tenAp, thanhVienHo }) => {
+const ChitietHoGiaDinh = ({ onBack, maHo, tenAp, thanhVienHo, coQuyenQuanLy }) => {
+    const [searchField, setSearchField] = useState('hoTen');
+    const [searchKeyword, setSearchKeyword] = useState('');
+
     const tinhTuoi = (ngaySinh) => {
         if (!ngaySinh) return '';
         const parts = ngaySinh.split('/');
@@ -12,28 +17,81 @@ const ChitietHoGiaDinh = ({ onBack, maHo, tenAp, thanhVienHo }) => {
         return namHienTai - namSinh;
     };
 
+    const timKiemTheoCot = (field, keyword) => {
+        setSearchField(field);
+        setSearchKeyword(keyword);
+    };
+
+    const xoaTimKiemTheoCot = (field) => {
+        setSearchField(field);
+        setSearchKeyword('');
+    };
+
     const cotChiTietHo = [
-        { title: 'Họ và Tên', dataIndex: 'hoTen', key: 'hoTen'},
-        { title: 'Giới tính', dataIndex: 'gioiTinh', key: 'gioiTinh' },
-        { title: 'Ngày sinh', dataIndex: 'ngaySinh', key: 'ngaySinh' },
         {
-            title: 'Tuổi',
+            title: <HeaderSearchIcon label="Họ và Tên" field="hoTen" value={searchField === 'hoTen' ? searchKeyword : ''} onSearch={timKiemTheoCot} onClear={xoaTimKiemTheoCot} />,
+            dataIndex: 'hoTen',
+            key: 'hoTen'
+        },
+        {
+            title: <HeaderSearchIcon label="Giới tính" field="gioiTinh" value={searchField === 'gioiTinh' ? searchKeyword : ''} onSearch={timKiemTheoCot} onClear={xoaTimKiemTheoCot} />,
+            dataIndex: 'gioiTinh',
+            key: 'gioiTinh'
+        },
+        {
+            title: <HeaderSearchIcon label="Ngày sinh" field="ngaySinh" value={searchField === 'ngaySinh' ? searchKeyword : ''} onSearch={timKiemTheoCot} onClear={xoaTimKiemTheoCot} />,
+            dataIndex: 'ngaySinh',
+            key: 'ngaySinh'
+        },
+        {
+            title: <HeaderSearchIcon label="Tuổi" field="tuoi" value={searchField === 'tuoi' ? searchKeyword : ''} onSearch={timKiemTheoCot} onClear={xoaTimKiemTheoCot} />,
             key: 'tuoi',
             render: (text, record) => tinhTuoi(record.ngaySinh)
         },
-        { title: 'CCCD', dataIndex: 'cccd', key: 'cccd' },
-        { title: 'Quan hệ', dataIndex: 'quanHe', key: 'quanHe' },
+        {
+            title: <HeaderSearchIcon label="CCCD" field="cccd" value={searchField === 'cccd' ? searchKeyword : ''} onSearch={timKiemTheoCot} onClear={xoaTimKiemTheoCot} />,
+            dataIndex: 'cccd',
+            key: 'cccd'
+        },
+        {
+            title: <HeaderSearchIcon label="Quan hệ" field="quanHe" value={searchField === 'quanHe' ? searchKeyword : ''} onSearch={timKiemTheoCot} onClear={xoaTimKiemTheoCot} />,
+            dataIndex: 'quanHe',
+            key: 'quanHe'
+        },
         {
             title: 'Hành động',
             key: 'hanhDong',
             render: () => (
-                <Space>
-                    <Button size="small">Sửa</Button>
-                    <Button size="small" danger>Xóa</Button>
-                </Space>
+                coQuyenQuanLy ? (
+                    <Space>
+                        <Button size="small">Sửa</Button>
+                        <Button size="small" danger>Xóa</Button>
+                    </Space>
+                ) : (
+                    <span style={{ color: '#9ca3af' }}>Không có quyền</span>
+                )
             )
         }
     ];
+
+    const thanhVienLoc = useMemo(() => {
+        const tuKhoa = searchKeyword.trim().toLowerCase();
+        if (!tuKhoa) return thanhVienHo;
+
+        const layGiaTri = (nguoi) => {
+            switch (searchField) {
+                case 'hoTen': return nguoi.hoTen;
+                case 'gioiTinh': return nguoi.gioiTinh;
+                case 'ngaySinh': return nguoi.ngaySinh;
+                case 'tuoi': return tinhTuoi(nguoi.ngaySinh);
+                case 'cccd': return nguoi.cccd;
+                case 'quanHe': return nguoi.quanHe;
+                default: return '';
+            }
+        };
+
+        return thanhVienHo.filter(nguoi => String(layGiaTri(nguoi) ?? '').toLowerCase().includes(tuKhoa));
+    }, [searchField, searchKeyword, thanhVienHo]);
 
     return (
         <div>
@@ -43,15 +101,16 @@ const ChitietHoGiaDinh = ({ onBack, maHo, tenAp, thanhVienHo }) => {
                     <Text type="secondary">Hộ: {maHo || ''} • Ấp: {tenAp || 'Chưa cập nhật'}</Text>
                 </div>
                 <Space>
-                    <Button type="primary">Thêm</Button>
+                    {coQuyenQuanLy && <Button type="primary">Thêm</Button>}
                     <Button onClick={onBack}>Quay lại</Button>
                 </Space>
             </div>
             <Table
                 columns={cotChiTietHo}
-                dataSource={thanhVienHo}
+                dataSource={thanhVienLoc}
                 pagination={false}
                 rowKey="id" // Thêm rowKey để Ant Design không báo lỗi thiếu key
+                tableLayout="fixed"
                 style={{ marginTop: '20px' }}
                 scroll={{ x: 800 }}
             />

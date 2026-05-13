@@ -5,3 +5,35 @@
 .ant-menu a:hover {
 	text-decoration: none;
 }
+
+.ant-table {
+	width: 100%;
+}
+
+.ant-table table {
+	table-layout: fixed;
+}
+
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td {
+	padding: 12px 10px;
+	white-space: normal;
+	word-break: break-word;
+	vertical-align: top;
+}
+
+.ant-table-cell {
+	overflow-wrap: anywhere;
+}
+
+.ho-gia-dinh-table .ant-col {
+	min-width: 0;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+.ho-gia-dinh-table .ant-col b,
+.ho-gia-dinh-table .ant-col span {
+	white-space: normal;
+	word-break: break-word;
+}

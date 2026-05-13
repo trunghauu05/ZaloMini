@@ -1,4 +1,33 @@
 {
+  "taiKhoan": [
+    {
+      "id": "tk-ubnd-xa-01",
+      "hoTen": "UBND xã",
+      "soDienThoai": "0909000001",
+      "matKhau": "123456",
+      "vaiTro": "ubnd_xa",
+      "tenAp": "",
+      "trangThai": "Đang hoạt động"
+    },
+    {
+      "id": "tk-truong-ap-01",
+      "hoTen": "Nguyễn Văn A",
+      "soDienThoai": "0901123456",
+      "matKhau": "123456",
+      "vaiTro": "truong_ap",
+      "tenAp": "Ấp Thới Hòa",
+      "trangThai": "Đang hoạt động"
+    },
+    {
+      "id": "tk-chi-bo-01",
+      "hoTen": "Lê Thị B",
+      "soDienThoai": "0912234567",
+      "matKhau": "123456",
+      "vaiTro": "chi_bo",
+      "tenAp": "Ấp Thạnh Lộc",
+      "trangThai": "Đang hoạt động"
+    }
+  ],
   "nhanKhau": [
     {
       "id": "1",
